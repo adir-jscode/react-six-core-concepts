@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.container {
+  color: blue;
+  background-color: white;
+  padding: 10px 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

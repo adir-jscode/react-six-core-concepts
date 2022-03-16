@@ -3,6 +3,16 @@ import './App.css';
 
 const name = 'Afsana Ara';
 const number = 600;
+const singer = {
+  name: 'Atif Aslam',
+  job:"singer"
+}
+const singerStyle = {
+  backgroundColor: 'cyan',
+  color: 'white',
+  padding: '20px'
+
+}
 
 function App() {
   return (
@@ -14,8 +24,9 @@ function App() {
           <h3>Hello React,lets Go</h3>
         </div>
         <div className="music">
-          <p>Name: {name}</p>
-          <p>Number : {10+ number }</p>
+          <p style={{color:'purple',backgroundColor:'white',padding:'40px'}}>Name: {name}</p>
+          <p>Number : {10 + number}</p>
+          <p style={singerStyle}>Name: {singer.name} Job: { singer.job }</p>
         </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
