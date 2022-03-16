@@ -17,7 +17,7 @@ const singerStyle = {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>JSX</h1>
         <div className="container">
@@ -39,9 +39,35 @@ function App() {
         >
           Let's Go
         </a>
-      </header>
+      </header> */}
+      <h1>Components</h1>
+      <h3>Similar in Looks</h3>
+      <Person></Person>
+      <Person></Person>
+      <Person></Person>
+      <h1>New Component</h1>
+      <Friend></Friend>
+      <Friend></Friend>
     </div>
   );
+}
+
+function Person() {
+  return (
+    <div className="container">
+      <h1>Name : {name}</h1>
+      <p>Job: Programming</p>
+    </div>
+  )
+}
+
+function Friend() {
+  return (
+    <div className="friend">
+      <h1>Name : Adir</h1>
+      <h3>Job : Eating</h3>
+    </div>
+  )
 }
 
 export default App;

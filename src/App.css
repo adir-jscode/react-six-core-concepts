@@ -29,9 +29,17 @@
 }
 
 .container {
-  color: blue;
-  background-color: white;
+  color: purple;
+  background-color: cyan;
   padding: 10px 20px;
+  border: 2px solid gray;
+  margin: 10px;
+}
+.friend {
+  background-color: gray;
+  border: 2px solid black;
+  padding: 10px 20px;
+  margin: 10px;
 }
 
 @keyframes App-logo-spin {
