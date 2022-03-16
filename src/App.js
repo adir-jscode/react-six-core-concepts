@@ -42,29 +42,31 @@ function App() {
       </header> */}
       <h1>Components</h1>
       <h3>Similar in Looks</h3>
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
+      <Person name="Ara"></Person>
+      <Person name="Baz"></Person>
+      <Person name="adir"></Person>
       <h1>New Component</h1>
-      <Friend></Friend>
-      <Friend></Friend>
+      <Friend name="John Kabir"></Friend>
+      <Friend name="Taskin"></Friend>
     </div>
   );
 }
 
-function Person() {
+function Person(props) {
+  console.log(props)
   return (
     <div className="container">
-      <h1>Name : {name}</h1>
+      <h1>Name : {props.name}</h1>
       <p>Job: Programming</p>
     </div>
   )
 }
 
-function Friend() {
+function Friend(props) {
+  console.log(props);
   return (
     <div className="friend">
-      <h1>Name : Adir</h1>
+      <h1>Name : { props.name }</h1>
       <h3>Job : Eating</h3>
     </div>
   )
