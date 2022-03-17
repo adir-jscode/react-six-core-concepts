@@ -14,7 +14,13 @@ const singerStyle = {
 
 }
 
+const singers = [
+  { name: 'Habib', job: 'natok' },
+  {name:'Tahsan',job:'Super star'}
+]
+
 function App() {
+  const heros = ['sakib', 'rakin', 'taskin', 'rubel'];
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -42,12 +48,27 @@ function App() {
       </header> */}
       <h1>Components</h1>
       <h3>Similar in Looks</h3>
-      <Person name="Ara"></Person>
+      
+      {
+        heros.map(hero => <li>{ hero }</li>)
+      }
+
+      {
+        heros.map(hero=><Person name={hero}></Person>)
+      }
+
+      {/* <Person name="Ara"></Person>
       <Person name="Baz"></Person>
-      <Person name="adir"></Person>
+      <Person name="adir"></Person> */}
       <h1>New Component</h1>
       <Friend name="John Kabir"></Friend>
       <Friend name="Taskin"></Friend>
+
+      <h1>Singer Component</h1>
+      {
+        singers.map(singer => <Singers name={singer.name} job={singer.job}></Singers>)
+        
+}
     </div>
   );
 }
@@ -68,6 +89,19 @@ function Friend(props) {
     <div className="friend">
       <h1>Name : { props.name }</h1>
       <h3>Job : Eating</h3>
+    </div>
+  )
+}
+
+
+
+function Singers({name, job}) {
+  // const { name, job } = props;
+  console.log(name, job);
+  return (
+    <div>
+      <h1>Name : {name}</h1>
+      <h3>Job: {job}</h3>
     </div>
   )
 }
