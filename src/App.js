@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 const name = 'Afsana Ara';
 const number = 600;
@@ -82,8 +83,30 @@ function App() {
       {
         products.map(product =><Products name={product.name} price={product.price}></Products>)
       }
+
+      <h1> Change State using useState()</h1>
+      <Count></Count>
     </div>
   );
+}
+
+function Count() {
+  const [count, setCount] = useState(0);
+  console.log(count, setCount);
+  function increaseCount() {
+    const newCount = count + 1;
+    setCount(newCount);
+  }
+  function decreaseCount() {
+    setCount(count - 1);
+  }
+  return (
+    <div>
+      <h1>Count: {count} </h1>
+      <button onClick={increaseCount}>Increase</button>
+      <button onClick={decreaseCount}>Decrease</button>
+    </div>
+  )
 }
 
 function Person(props) {
