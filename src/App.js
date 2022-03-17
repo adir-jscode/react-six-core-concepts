@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const name = 'Afsana Ara';
 const number = 600;
@@ -86,8 +86,66 @@ function App() {
 
       <h1> Change State using useState()</h1>
       <Count></Count>
+      <h1>Load data using UseState and UseEffect</h1>
+      <LoadUsers></LoadUsers>
+      <h1>Load comments</h1>
+      <LoadComments></LoadComments>
     </div>
   );
+}
+function LoadComments() {
+  const [comments, setComments] = useState([]);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/comments')
+      .then(response => response.json())
+    .then(data =>setComments(data));
+  },[])
+  return (
+    <div>
+      <h1>Number of comments { comments.length }</h1>
+      {
+        comments.map(comment =><DisplayComments name={comment.name} body={comment.body}></DisplayComments>)
+      }
+    </div>
+  )
+}
+
+function DisplayComments(props) {
+  console.log(props);
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <p>{ props.body}</p>
+    </div>
+  )
+}
+
+function LoadUsers() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => setUsers(data));
+
+  },[])
+  return (
+    <div>
+      <h1> Number of users: {users.length}</h1>
+      {
+        users.map(user=> <DisplayUser name={user.name} address={user.address.street}></DisplayUser>)
+      }
+    </div>
+  )
+}
+
+function DisplayUser(props) {
+  console.log(props);
+  return (
+    <div>
+      <h1> Name: {props.name}</h1>
+      <p>Address: {props.address}</p>
+    </div>
+  )
 }
 
 function Count() {
